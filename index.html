@@ -276,31 +276,32 @@
 
     .platforms-track {
       display: flex;
-      gap: 1rem;
+      gap: 1.25rem;
       width: max-content;
-      animation: scrollPlatforms 28s linear infinite;
+      will-change: transform;
+      animation: scrollPlatforms 32s linear infinite;
     }
 
     .platforms-track:hover { animation-play-state: paused; }
 
     @keyframes scrollPlatforms {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-50%, 0, 0); }
     }
 
     .platform-logo {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.65rem;
       background: var(--surface);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(0, 210, 255, 0.12);
       border-radius: 999px;
-      padding: 0.75rem 1.4rem;
+      padding: 0.8rem 1.7rem;
       color: var(--text);
       font-weight: 600;
-      font-size: 0.95rem;
+      font-size: 1rem;
       white-space: nowrap;
       transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
     }
@@ -678,6 +679,8 @@
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-xbox"></i> Xbox</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-nintendo-switch"></i> Switch</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-steam"></i> Steam Deck</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-gamepad"></i> ROG Ally</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-oculus"></i> Oculus Quest</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-vr-cardboard"></i> PICO</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-windows"></i> Windows</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-apple"></i> iOS</a>
@@ -686,6 +689,8 @@
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-xbox"></i> Xbox</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-nintendo-switch"></i> Switch</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-steam"></i> Steam Deck</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-gamepad"></i> ROG Ally</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-oculus"></i> Oculus Quest</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-vr-cardboard"></i> PICO</a>
         </div>
       </div>
