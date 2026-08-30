@@ -32,7 +32,7 @@ Apri `http://127.0.0.1:8080/`.
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/nilo1221/gearup-landing.git
+git remote add origin https://github.com/nilo1221/gearup.git
 git branch -M main
 git push -u origin main
 ```
