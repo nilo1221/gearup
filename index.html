@@ -10,6 +10,7 @@
   <meta property="og:image" content="assets/og-image.jpg">
   <meta property="og:type" content="website">
   <link rel="icon" type="image/png" href="assets/app-icon.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
   <title>GearUP Booster | Riduci Ping e Lag nei Tuoi Giochi</title>
   <style>
     :root {
@@ -250,34 +251,68 @@
     }
 
     .platforms {
-      padding: 2rem 0;
+      padding: 2.5rem 0;
       text-align: center;
+      overflow: hidden;
     }
 
-    .platforms .section-intro { margin-bottom: 1rem; }
+    .platforms .section-intro { margin-bottom: 1.25rem; }
 
-    .platforms-list {
+    .platforms-carousel { position: relative; }
+
+    .platforms-carousel::before,
+    .platforms-carousel::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .platforms-carousel::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .platforms-carousel::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+
+    .platforms-track {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 1rem;
+      width: max-content;
+      animation: scrollPlatforms 28s linear infinite;
     }
 
-    .platforms-list a {
+    .platforms-track:hover { animation-play-state: paused; }
+
+    @keyframes scrollPlatforms {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .platform-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
       background: var(--surface);
-      border: 1px solid rgba(0, 210, 255, 0.10);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 210, 255, 0.12);
       border-radius: 999px;
-      padding: 0.55rem 1.1rem;
-      font-size: 0.9rem;
+      padding: 0.75rem 1.4rem;
       color: var(--text);
-      transition: background 0.15s ease, border-color 0.15s ease;
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
     }
 
-    .platforms-list a:hover {
+    .platform-logo:hover {
       background: rgba(0, 210, 255, 0.12);
       border-color: var(--accent);
+      transform: translateY(-2px);
       text-decoration: none;
     }
+
+    .platform-logo i { font-size: 1.3rem; color: var(--accent); }
 
     .partners p { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
 
@@ -634,15 +669,25 @@
   <section class="platforms">
     <div class="container">
       <p class="section-intro">Disponibile su</p>
-      <div class="platforms-list">
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">Windows</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">iOS</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">Android</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">PlayStation</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">Xbox</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">Switch</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">Steam Deck</a>
-        <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">PICO</a>
+      <div class="platforms-carousel" aria-label="Piattaforme supportate">
+        <div class="platforms-track">
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-windows"></i> Windows</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-apple"></i> iOS</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-android"></i> Android</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-playstation"></i> PlayStation</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-xbox"></i> Xbox</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-nintendo-switch"></i> Switch</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-steam"></i> Steam Deck</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-vr-cardboard"></i> PICO</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-windows"></i> Windows</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-apple"></i> iOS</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-android"></i> Android</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-playstation"></i> PlayStation</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-xbox"></i> Xbox</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-nintendo-switch"></i> Switch</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-steam"></i> Steam Deck</a>
+          <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-vr-cardboard"></i> PICO</a>
+        </div>
       </div>
     </div>
   </section>
