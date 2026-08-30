@@ -9,6 +9,7 @@
   <meta property="og:description" content="GearUP Booster riduce ping, packet loss e lag per PC, mobile e console.">
   <meta property="og:image" content="assets/og-image.jpg">
   <meta property="og:type" content="website">
+  <link rel="canonical" href="https://gearup-khaki.vercel.app/">
   <link rel="icon" type="image/png" href="assets/app-icon.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
   <title>GearUP Booster | Riduci Ping e Lag nei Tuoi Giochi</title>
@@ -358,7 +359,7 @@
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
     }
 
@@ -369,10 +370,56 @@
       border: 1px solid rgba(0, 210, 255, 0.08);
       border-radius: var(--radius);
       padding: 1.75rem;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .card:hover { transform: translateY(-4px); border-color: rgba(0, 210, 255, 0.3); box-shadow: 0 20px 50px rgba(0, 132, 255, 0.12); }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover { transform: translateY(-8px); border-color: rgba(0, 210, 255, 0.3); box-shadow: 0 25px 60px rgba(0, 132, 255, 0.18); }
+    .card:hover::before { transform: scaleX(1); }
+
+    .card-header {
+      margin: -1.75rem -1.75rem 0;
+      height: 160px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+
+    .card-header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 20%, var(--surface) 100%);
+    }
+
+    .card-header .feature-visual {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      transition: transform 0.5s ease;
+    }
+
+    .card:hover .card-header .feature-visual { transform: scale(1.08); }
+    .card-header + .card-icon { margin-top: -1.75rem; position: relative; z-index: 2; }
 
     .asset-img {
       max-width: 100%;
@@ -405,15 +452,16 @@
     }
 
     .card-icon {
-      width: 48px;
-      height: 48px;
-      background: var(--surface-2);
-      border-radius: 12px;
+      width: 56px;
+      height: 56px;
+      background: var(--gradient);
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 1rem;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.25);
     }
 
     .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
@@ -719,22 +767,28 @@
       <p class="section-intro">Un game booster pensato per chi vuole prestazioni stabili, ping bassi e partite senza interruzioni.</p>
       <div class="cards">
         <div class="card">
+          <div class="card-header">
+            <img src="assets/performance.png" alt="Confronto prestazioni GearUP ON vs OFF" class="feature-visual" loading="lazy">
+          </div>
           <div class="card-icon">⚡</div>
           <h3>Ping più basso</h3>
           <p>Routing ottimizzato verso i server di gioco per ridurre latenza e jitter anche su connessioni cross-region.</p>
-          <img src="assets/performance.png" alt="Confronto prestazioni GearUP ON vs OFF" class="feature-visual" loading="lazy">
         </div>
         <div class="card">
+          <div class="card-header">
+            <img src="assets/routing-advantages.png" alt="Routing ottimizzato GearUP con GUB Edge e AI Server" class="feature-visual" loading="lazy">
+          </div>
           <div class="card-icon">🛡️</div>
           <h3>Packet loss ridotto</h3>
           <p>Connessione stabile e affidabile, perfetta per shooter, MOBA e giochi competitivi dove ogni millisecondo conta.</p>
-          <img src="assets/routing-advantages.png" alt="Routing ottimizzato GearUP con GUB Edge e AI Server" class="feature-visual" loading="lazy">
         </div>
         <div class="card">
+          <div class="card-header">
+            <img src="assets/air-mode.gif" alt="GearUP AIR mode - Adaptive Intelligent Routing" class="feature-visual" loading="lazy">
+          </div>
           <div class="card-icon">🎯</div>
           <h3>Stabilità FPS</h3>
           <p>Tecnologia di boosting intelligente che aiuta a mantenere visivi fluidi e stabili durante ogni match.</p>
-          <img src="assets/air-mode.gif" alt="GearUP AIR mode - Adaptive Intelligent Routing" class="feature-visual" loading="lazy">
         </div>
         <div class="card">
           <div class="card-icon">🔒</div>
@@ -742,10 +796,12 @@
           <p>I dati di gioco sono criptati e instradati in modo sicuro. Nessun dato personale raccolto o condiviso.</p>
         </div>
         <div class="card">
+          <div class="card-header">
+            <img src="assets/boosting-app.jpg" alt="Interfaccia GearUP con ping a 18ms e packet loss 0%" class="feature-visual" loading="lazy">
+          </div>
           <div class="card-icon">🎮</div>
           <h3>Multi-piattaforma</h3>
           <p>Disponibile per PC Windows, Android, iOS, PlayStation, Switch, Xbox, Oculus Quest e Pico.</p>
-          <img src="assets/boosting-app.jpg" alt="Interfaccia GearUP con ping a 18ms e packet loss 0%" class="feature-visual" loading="lazy">
         </div>
         <div class="card">
           <div class="card-icon">🌍</div>
