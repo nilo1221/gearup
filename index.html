@@ -253,40 +253,54 @@
     .platforms {
       padding: 2.5rem 0;
       text-align: center;
-      overflow: hidden;
+      --marquee-gap: 1.25rem;
+      --marquee-duration: 35s;
     }
 
     .platforms .section-intro { margin-bottom: 1.25rem; }
 
-    .platforms-carousel { position: relative; }
-
-    .platforms-carousel::before,
-    .platforms-carousel::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 80px;
-      z-index: 2;
-      pointer-events: none;
+    .platforms-carousel {
+      display: flex;
+      overflow: hidden;
+      -webkit-user-select: none;
+      user-select: none;
+      gap: var(--marquee-gap);
+      -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 12%,
+        rgba(0,0,0,1) 88%,
+        rgba(0,0,0,0)
+      );
+      mask-image: linear-gradient(
+        to right,
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 1) 12%,
+        hsl(0 0% 0% / 1) 88%,
+        hsl(0 0% 0% / 0)
+      );
     }
-
-    .platforms-carousel::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
-    .platforms-carousel::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
 
     .platforms-track {
+      flex-shrink: 0;
       display: flex;
-      gap: 1.25rem;
-      width: max-content;
+      align-items: center;
+      justify-content: space-around;
+      gap: var(--marquee-gap);
+      min-width: 100%;
       will-change: transform;
-      animation: scrollPlatforms 32s linear infinite;
+      animation: scrollPlatforms var(--marquee-duration) linear infinite;
     }
 
-    .platforms-track:hover { animation-play-state: paused; }
+    .platforms-carousel:hover .platforms-track { animation-play-state: paused; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .platforms-track { animation-play-state: paused; }
+    }
 
     @keyframes scrollPlatforms {
-      0% { transform: translate3d(0, 0, 0); }
-      100% { transform: translate3d(-50%, 0, 0); }
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-100% - var(--marquee-gap))); }
     }
 
     .platform-logo {
@@ -298,10 +312,10 @@
       backdrop-filter: blur(10px);
       border: 1px solid rgba(0, 210, 255, 0.12);
       border-radius: 999px;
-      padding: 0.8rem 1.7rem;
+      padding: 0.75rem 1.5rem;
       color: var(--text);
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       white-space: nowrap;
       transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
     }
@@ -313,7 +327,7 @@
       text-decoration: none;
     }
 
-    .platform-logo i { font-size: 1.3rem; color: var(--accent); }
+    .platform-logo i { font-size: 1.25rem; color: var(--accent); }
 
     .partners p { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
 
@@ -682,6 +696,8 @@
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-gamepad"></i> ROG Ally</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-oculus"></i> Oculus Quest</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-solid fa-vr-cardboard"></i> PICO</a>
+        </div>
+        <div class="platforms-track" aria-hidden="true">
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-windows"></i> Windows</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-apple"></i> iOS</a>
           <a href="https://www.tkqlhce.com/click-101867902-17235976" class="platform-logo" target="_blank" rel="noopener sponsored"><i class="fa-brands fa-android"></i> Android</a>
