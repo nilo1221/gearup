@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GearUP Booster riduce ping, packet loss e lag per PC, mobile e console. Ottimizza la connessione di gioco con tecnologia VPN sicura e routing intelligente.">
+  <meta name="keywords" content="game booster, riduci ping, lag, packet loss, VPN gaming, GearUP, abbonamento gaming">
+  <meta property="og:title" content="GearUP Booster | Riduci Ping e Lag nei Tuoi Giochi">
+  <meta property="og:description" content="GearUP Booster riduce ping, packet loss e lag per PC, mobile e console.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/app-icon.jpg">
+  <title>GearUP Booster | Riduci Ping e Lag nei Tuoi Giochi</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --surface: #15161d;
+      --surface-2: #1f2029;
+      --text: #f5f5f7;
+      --muted: #a0a0b0;
+      --accent: #00d26a;
+      --accent-2: #00a8ff;
+      --gradient: linear-gradient(135deg, #00d26a 0%, #00a8ff 100%);
+      --radius: 14px;
+      --max-width: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 12, 16, 0.95);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .logo {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient);
+      color: #000;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .nav-cta:hover { text-decoration: none; opacity: 0.9; }
+
+    .hero {
+      padding: 5rem 0 3.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 0%, rgba(0, 210, 106, 0.12), transparent 60%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gradient);
+      color: #000;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 10px 30px rgba(0, 210, 106, 0.25);
+    }
+
+    .btn:hover { text-decoration: none; transform: translateY(-2px); box-shadow: 0 14px 38px rgba(0, 210, 106, 0.35); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: none;
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+
+    .cta-centered { text-align: center; margin-top: 2rem; }
+
+    .cta-final {
+      background: var(--surface);
+      text-align: center;
+    }
+
+    .global-note { margin-top: 1.5rem; }
+
+    .partners {
+      padding: 2rem 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: var(--surface);
+    }
+
+    .partners p { text-align: center; color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; }
+
+    .partners-list {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-weight: 700;
+      color: var(--text);
+      opacity: 0.85;
+    }
+
+    section { padding: 4.5rem 0; }
+
+    h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .card:hover { transform: translateY(-4px); border-color: rgba(0, 210, 106, 0.4); }
+
+    .asset-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .trustpilot-img {
+      max-width: 320px;
+      height: auto;
+      margin: 1.5rem auto 0;
+      display: block;
+    }
+
+    .partners-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      margin-top: 1.5rem;
+    }
+
+    .feature-visual {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      margin-top: 1rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--surface-2);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+
+    .games {
+      background: var(--surface);
+    }
+
+    .games-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .game-tag {
+      background: var(--surface-2);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.55rem 1rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: -14px;
+      left: 1.5rem;
+      width: 32px;
+      height: 32px;
+      background: var(--gradient);
+      color: #000;
+      font-weight: 800;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 { margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+
+    .testimonials {
+      background: var(--surface);
+    }
+
+    .quote {
+      background: var(--bg);
+      border-left: 4px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin-bottom: 1rem;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .quote-author { color: var(--muted); font-size: 0.9rem; }
+
+    .pricing {
+      text-align: center;
+    }
+
+    .pricing-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .pricing-card {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .pricing-card.popular { border-color: var(--accent); position: relative; }
+
+    .popular-badge {
+      position: absolute;
+      top: -12px;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+    }
+
+    .plan-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .plan-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+    .banner-section {
+      text-align: center;
+      background: var(--surface);
+    }
+
+    .banner-section a { display: inline-block; border-radius: 12px; overflow: hidden; }
+    .banner-section img { max-width: 100%; height: auto; display: block; }
+
+    .affiliate-disclaimer {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-align: center;
+      max-width: 800px;
+      margin: 2rem auto 0;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+    .faq-item p { color: var(--muted); font-size: 0.95rem; }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 3.5rem 0 2.5rem; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      section { padding: 3rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored"><img src="assets/gearup-logo.png" alt="GearUP" class="logo"></a>
+      <a href="https://www.tkqlhce.com/click-101867902-17235976" class="nav-cta" target="_blank" rel="noopener sponsored">Provalo gratis</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Riduci il ping e il lag con GearUP Booster</h1>
+      <p>Ottimizza la tua connessione di gioco su PC, mobile e console. Tecnologia VPN sicura, routing intelligente e oltre 2.500 titoli supportati, inclusi Fortnite, Valorant, PUBG, Call of Duty e Escape from Tarkov.</p>
+      <div class="hero-actions">
+        <a href="https://www.tkqlhce.com/click-101867902-17235976" class="btn" target="_blank" rel="noopener sponsored">Scarica GearUP gratis</a>
+        <a href="#caratteristiche" class="btn btn-secondary">Scopri come funziona</a>
+      </div>
+      <img src="assets/trustpilot.png" alt="Trustpilot 4.9 Excellent" class="trustpilot-img">
+    </div>
+  </section>
+
+  <div class="partners">
+    <div class="container">
+      <p>Collaborazioni ufficiali e riconosciute dai giocatori</p>
+      <img src="assets/collaborations.png" alt="Collaborazioni GearUP con sviluppatori, publisher e brand" class="partners-img" loading="lazy">
+    </div>
+  </div>
+
+  <section id="caratteristiche">
+    <div class="container">
+      <h2>Perché scegliere GearUP?</h2>
+      <p class="section-intro">Un game booster pensato per chi vuole prestazioni stabili, ping bassi e partite senza interruzioni.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Ping più basso</h3>
+          <p>Routing ottimizzato verso i server di gioco per ridurre latenza e jitter anche su connessioni cross-region.</p>
+          <img src="assets/performance.png" alt="Confronto prestazioni GearUP ON vs OFF" class="feature-visual" loading="lazy">
+        </div>
+        <div class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Packet loss ridotto</h3>
+          <p>Connessione stabile e affidabile, perfetta per shooter, MOBA e giochi competitivi dove ogni millisecondo conta.</p>
+          <img src="assets/routing-advantages.png" alt="Routing ottimizzato GearUP con GUB Edge e AI Server" class="feature-visual" loading="lazy">
+        </div>
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Stabilità FPS</h3>
+          <p>Tecnologia di boosting intelligente che aiuta a mantenere visivi fluidi e stabili durante ogni match.</p>
+          <img src="assets/air-mode.gif" alt="GearUP AIR mode - Adaptive Intelligent Routing" class="feature-visual" loading="lazy">
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>VPN sicura solo per il gaming</h3>
+          <p>I dati di gioco sono criptati e instradati in modo sicuro. Nessun dato personale raccolto o condiviso.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🎮</div>
+          <h3>Multi-piattaforma</h3>
+          <p>Disponibile per PC Windows, Android, iOS, PlayStation, Switch, Xbox, Oculus Quest e Pico.</p>
+          <img src="assets/boosting-app.jpg" alt="Interfaccia GearUP con ping a 18ms e packet loss 0%" class="feature-visual" loading="lazy">
+        </div>
+        <div class="card">
+          <div class="card-icon">🌍</div>
+          <h3>Oltre 2.500 giochi</h3>
+          <p>Un clic per ottimizzare titoli popolari come Fortnite, Free Fire, Mobile Legends, Brawl Stars, PUBGM, CODM, Roblox e molti altri.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="games">
+    <div class="container">
+      <h2>Giochi supportati</h2>
+      <p class="section-intro">GearUP funziona con i titoli più giocati al mondo, aggiornati costantemente con nuove uscite.</p>
+      <div class="games-list">
+        <span class="game-tag">Fortnite</span>
+        <span class="game-tag">Valorant</span>
+        <span class="game-tag">Escape from Tarkov</span>
+        <span class="game-tag">PUBG</span>
+        <span class="game-tag">Call of Duty Mobile</span>
+        <span class="game-tag">Free Fire</span>
+        <span class="game-tag">Mobile Legends</span>
+        <span class="game-tag">Brawl Stars</span>
+        <span class="game-tag">Roblox</span>
+        <span class="game-tag">Genshin Impact</span>
+        <span class="game-tag">Apex Legends</span>
+        <span class="game-tag">NBA 2K</span>
+        <span class="game-tag">EA FC</span>
+        <span class="game-tag">NARAKA: BLADEPOINT</span>
+        <span class="game-tag">e 2.500+ altri</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Come funziona</h2>
+      <p class="section-intro">Tre passaggi semplici per iniziare a giocare con una connessione più stabile.</p>
+      <div class="steps">
+        <div class="step">
+          <h3>Scarica l'app</h3>
+          <p>Installa GearUP Booster sul tuo PC, smartphone o console in pochi secondi.</p>
+        </div>
+        <div class="step">
+          <h3>Scegli il gioco</h3>
+          <p>Seleziona il titolo e il server a cui vuoi connetterti dall'interfaccia intuitiva.</p>
+        </div>
+        <div class="step">
+          <h3>Clicca Boost</h3>
+          <p>Un solo clic attiva l'ottimizzazione. Gioca con ping ridotto e connessione stabile.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <h2>Cosa dicono i giocatori</h2>
+      <p class="section-intro">Recensioni reali di utenti che hanno migliorato la propria esperienza di gioco.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="quote">"Il mio ping è sceso subito. Ora è tutto più fluido e non ho problemi di connessione."</div>
+          <p class="quote-author">— Utente GearUP</p>
+        </div>
+        <div class="card">
+          <div class="quote">"Sono passato da 60-100ms a circa 50ms. Stabilizza la connessione su Call of Duty, Apex, Valorant e Rocket League."</div>
+          <p class="quote-author">— Utente GearUP</p>
+        </div>
+        <div class="card">
+          <div class="quote">"Grazie a GearUP posso finalmente giocare sui server NA con i miei amici senza problemi."</div>
+          <p class="quote-author">— Utente GearUP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="games">
+    <div class="container">
+      <h2>Giocatori in tutto il mondo</h2>
+      <p class="section-intro">GearUP è usato attivamente in decine di paesi. Ecco dove converte di più al momento.</p>
+      <div class="games-list">
+        <span class="game-tag">Federazione Russa 55.7%</span>
+        <span class="game-tag">Taiwan 20.4%</span>
+        <span class="game-tag">Stati Uniti 18.2%</span>
+        <span class="game-tag">Ecuador 3.3%</span>
+        <span class="game-tag">Vietnam 1.2%</span>
+      </div>
+      <p class="section-intro global-note">Area di servizio estesa: Argentina, Brasile, Canada, Francia, Germania, Giappone, Corea, Perù, Filippine, Portogallo, Singapore e altri paesi Asia/Pacifico ed Europa.</p>
+    </div>
+  </section>
+
+  <section class="pricing">
+    <div class="container">
+      <h2>Piani di abbonamento</h2>
+      <p class="section-intro">Scegli il piano più adatto alle tue sessioni di gioco. Prezzi in USD, con prova gratuita e cancellazione flessibile. <a href="https://www.gearupbooster.com/pay/subscription/" target="_blank" rel="noopener sponsored">Visualizza i prezzi aggiornati</a>.</p>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="plan-name">Mensile</div>
+          <div class="plan-desc">Massima flessibilità, rinnova solo quando vuoi.</div>
+        </div>
+        <div class="pricing-card popular">
+          <div class="popular-badge">Consigliato</div>
+          <div class="plan-name">Trimestrale</div>
+          <div class="plan-desc">Buon compromesso tra prezzo e continuità.</div>
+        </div>
+        <div class="pricing-card">
+          <div class="plan-name">Annuale</div>
+          <div class="plan-desc">Miglior rapporto qualità-prezzo per giocatori intensi.</div>
+        </div>
+      </div>
+      <div class="cta-centered">
+        <a href="https://www.tkqlhce.com/click-101867902-17235976" class="btn" target="_blank" rel="noopener sponsored">Inizia la prova gratuita</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="banner-section">
+    <div class="container">
+      <h2>Promo ufficiale GearUP</h2>
+      <p class="section-intro">Clicca sul banner per scoprire l'offerta e attivare il tuo abbonamento.</p>
+      <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">
+        <img src="https://www.ftjcfx.com/image-101867902-17235976" width="1001" height="691" alt="GearUP Booster - Riduci ping e lag" loading="lazy">
+      </a>
+      <p class="affiliate-disclaimer">Questa pagina contiene link affiliati. Se effettui un acquisto attraverso questi link, potrei ricevere una commissione senza alcun costo aggiuntivo per te. Grazie per il supporto!</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2>Domande frequenti</h2>
+      <div class="faq-item">
+        <h3>GearUP è sicuro da usare?</h3>
+        <p>Sì. Utilizza la tecnologia VPN esclusivamente per instradare i dati di gioco in modo criptato e sicuro. Non modifica il gameplay e non espone al rischio di ban.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Su quali dispositivi funziona?</h3>
+        <p>Funziona su PC Windows, Android, iOS, PlayStation, Xbox, Nintendo Switch, Oculus Quest e Pico. È disponibile anche una versione per router compatibili.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Devo pagare subito?</h3>
+        <p>Puoi iniziare con una prova gratuita. Gli abbonamenti si rinnovano automaticamente a fine ciclo, ma puoi cancellare quando vuoi.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quali giochi posso ottimizzare?</h3>
+        <p>Oltre 2.500 titoli, tra cui Fortnite, Valorant, PUBG, Call of Duty, Free Fire, Mobile Legends, Brawl Stars, Roblox, Genshin Impact, NBA 2K, EA FC e molti altri.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-final">
+    <div class="container">
+      <h2>Pronto a eliminare il lag?</h2>
+      <p class="section-intro">Scarica GearUP Booster e inizia a giocare con ping più bassi e connessione stabile.</p>
+      <a href="https://www.tkqlhce.com/click-101867902-17235976" class="btn" target="_blank" rel="noopener sponsored">Prova GearUP ora</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Landing partner GearUP. Pagina promozionale realizzata per Smile Internet Technologies PTE Limited tramite CJ Affiliate.</p>
+      <p>Sito ufficiale: <a href="https://www.gearupbooster.com/" target="_blank" rel="noopener">gearupbooster.com</a> &middot; Supporto: <a href="mailto:service1@gearupbooster.com">service1@gearupbooster.com</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+drive-download-20260830T222214Z-1-001/
+*.mp4
+.DS_Store
+node_modules/
+.vercel
