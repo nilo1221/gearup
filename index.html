@@ -455,6 +455,7 @@
       width: 56px;
       height: 56px;
       background: var(--gradient);
+      color: #000;
       border-radius: 14px;
       display: flex;
       align-items: center;
@@ -657,6 +658,54 @@
     footer a { color: var(--muted); }
     footer a:hover { color: var(--accent); }
 
+    .affiliate-note { font-size: 0.75rem; margin-top: 0.5rem; color: var(--muted); }
+
+    .tech-section {
+      background: var(--surface);
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .tech-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0, 210, 255, 0.10);
+      box-shadow: 0 20px 60px rgba(0, 132, 255, 0.12);
+    }
+
+    .tech-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tech-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .tech-point i {
+      font-size: 1.4rem;
+      color: var(--accent-2);
+      margin-top: 0.15rem;
+    }
+
+    .tech-point h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+    .tech-point p { color: var(--muted); font-size: 0.95rem; }
+
+    @media (max-width: 900px) {
+      .tech-grid { grid-template-columns: 1fr; }
+      .tech-grid img { order: -1; }
+    }
+
     @media (max-width: 600px) {
       .hero { padding: 2.5rem 0 2rem; }
       .hero-actions { flex-direction: column; }
@@ -763,51 +812,86 @@
 
   <section id="caratteristiche">
     <div class="container">
-      <h2>Perché scegliere GearUP?</h2>
-      <p class="section-intro">Un game booster pensato per chi vuole prestazioni stabili, ping bassi e partite senza interruzioni.</p>
+      <h2>Prodotti e funzionalità</h2>
+      <p class="section-intro">Soluzioni GearUP per PC, console, mobile e per giocare con gli amici ovunque.</p>
       <div class="cards">
         <div class="card">
           <div class="card-header">
-            <img src="assets/performance.png" alt="Confronto prestazioni GearUP ON vs OFF" class="feature-visual" loading="lazy">
+            <img src="assets/boosting-app.jpg" alt="Interfaccia GearUP per Windows" class="feature-visual" loading="lazy">
           </div>
-          <div class="card-icon">⚡</div>
-          <h3>Ping più basso</h3>
-          <p>Routing ottimizzato verso i server di gioco per ridurre latenza e jitter anche su connessioni cross-region.</p>
+          <div class="card-icon"><i class="fa-brands fa-windows"></i></div>
+          <h3>GearUP per Windows</h3>
+          <p>Il Booster per PC è compatibile anche con i giochi per console. Riduci ping e instabilità tra regioni.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <img src="assets/routing-advantages.png" alt="Routing ottimizzato GearUP con GUB Edge e AI Server" class="feature-visual" loading="lazy">
+            <img src="assets/routing-advantages.png" alt="Router GearUP e ottimizzazione rete" class="feature-visual" loading="lazy">
           </div>
-          <div class="card-icon">🛡️</div>
-          <h3>Packet loss ridotto</h3>
-          <p>Connessione stabile e affidabile, perfetta per shooter, MOBA e giochi competitivi dove ogni millisecondo conta.</p>
+          <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+          <h3>Router GearUP</h3>
+          <p>Potenzia i giochi su Console e PC con un solo clic. HYPEREV è il router gaming sviluppato da GearUP.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <img src="assets/air-mode.gif" alt="GearUP AIR mode - Adaptive Intelligent Routing" class="feature-visual" loading="lazy">
+            <img src="assets/performance.png" alt="Prestazioni GearUP su mobile" class="feature-visual" loading="lazy">
           </div>
-          <div class="card-icon">🎯</div>
-          <h3>Stabilità FPS</h3>
-          <p>Tecnologia di boosting intelligente che aiuta a mantenere visivi fluidi e stabili durante ogni match.</p>
+          <div class="card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+          <h3>GearUP per Mobile</h3>
+          <p>Boosta i giochi per mobile e riduci la latenza con un solo clic. Disponibile per iOS e Android.</p>
         </div>
         <div class="card">
-          <div class="card-icon">🔒</div>
-          <h3>VPN sicura solo per il gaming</h3>
-          <p>I dati di gioco sono criptati e instradati in modo sicuro. Nessun dato personale raccolto o condiviso.</p>
+          <div class="card-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h3>LAN Play</h3>
+          <p>Gioca ai giochi LAN con gli amici. Ovunque. Più veloce. Più sicuro.</p>
         </div>
         <div class="card">
           <div class="card-header">
-            <img src="assets/boosting-app.jpg" alt="Interfaccia GearUP con ping a 18ms e packet loss 0%" class="feature-visual" loading="lazy">
+            <img src="assets/ping-contract.jpg" alt="Ping Test GearUP" class="feature-visual" loading="lazy">
           </div>
-          <div class="card-icon">🎮</div>
-          <h3>Multi-piattaforma</h3>
-          <p>Disponibile per PC Windows, Android, iOS, PlayStation, Switch, Xbox, Oculus Quest e Pico.</p>
+          <div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div>
+          <h3>Ping Test</h3>
+          <p>Controlla il ping del gioco prima di giocare e scegli il percorso di rete più stabile.</p>
         </div>
         <div class="card">
-          <div class="card-icon">🌍</div>
-          <h3>Oltre 2.500 giochi</h3>
-          <p>Un clic per ottimizzare titoli popolari come Fortnite, Free Fire, Mobile Legends, Brawl Stars, PUBGM, CODM, Roblox e molti altri.</p>
+          <div class="card-icon"><i class="fa-brands fa-twitch"></i></div>
+          <h3>Ottieni Twitch Drops</h3>
+          <p>Risparmia tempo e fatica con un clic. Ottieni i Twitch Drops anche senza guardare lo stream.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-section">
+    <div class="container">
+      <h2>La miglior tecnologia al mondo</h2>
+      <p class="section-intro">GearUP ottimizza la connessione grazie alla tecnologia AIR (Adaptive Intelligent Routing).</p>
+      <div class="tech-grid">
+        <div class="tech-content">
+          <div class="tech-points">
+            <div class="tech-point">
+              <i class="fa-solid fa-bolt"></i>
+              <div>
+                <h3>Mai più limiti</h3>
+                <p>Gioca al massimo delle prestazioni ovunque ti trovi. GearUP ti garantisce la miglior connessione di sempre.</p>
+              </div>
+            </div>
+            <div class="tech-point">
+              <i class="fa-solid fa-globe"></i>
+              <div>
+                <h3>Supporto multipiattaforma</h3>
+                <p>Oltre al PC, GearUP supporta dispositivi mobili (Android/iOS) e console (PlayStation/Switch/Xbox/Oculus Quest/Pico).</p>
+              </div>
+            </div>
+            <div class="tech-point">
+              <i class="fa-solid fa-route"></i>
+              <div>
+                <h3>Routing adattivo</h3>
+                <p>L'algoritmo AIR seleziona automaticamente il percorso di rete più stabile per ridurre ping e jitter.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <img src="assets/air-mode.gif" alt="Tecnologia AIR - Adaptive Intelligent Routing" loading="lazy">
       </div>
     </div>
   </section>
@@ -859,20 +943,20 @@
 
   <section class="testimonials">
     <div class="container">
-      <h2>Cosa dicono i giocatori</h2>
-      <p class="section-intro">Recensioni reali di utenti che hanno migliorato la propria esperienza di gioco.</p>
+      <h2>Dicono di noi</h2>
+      <p class="section-intro">Recensioni reali di creator e giocatori che hanno migliorato la propria esperienza.</p>
       <div class="cards">
         <div class="card">
-          <div class="quote">"Il mio ping è sceso subito. Ora è tutto più fluido e non ho problemi di connessione."</div>
-          <p class="quote-author">— Utente GearUP</p>
+          <div class="quote">"Dopo aver usato GearUP, il mio ping è sceso immediatamente ed è tutto molto più fluido del solito."</div>
+          <p class="quote-author">— Garit Dewana, 813K iscritti (Indonesia · PUBG)</p>
         </div>
         <div class="card">
-          <div class="quote">"Sono passato da 60-100ms a circa 50ms. Stabilizza la connessione su Call of Duty, Apex, Valorant e Rocket League."</div>
-          <p class="quote-author">— Utente GearUP</p>
+          <div class="quote">"L'aspetto più importante è la sicurezza di GearUP. Non si va incontro al rischio di ban perché l'app non influisce sul modo in cui si gioca, ma si limita a migliorare la connessione."</div>
+          <p class="quote-author">— KULARZ SZOTY, 70K iscritti (Polonia · Fortnite)</p>
         </div>
         <div class="card">
-          <div class="quote">"Grazie a GearUP posso finalmente giocare sui server NA con i miei amici senza problemi."</div>
-          <p class="quote-author">— Utente GearUP</p>
+          <div class="quote">"Con GearUP sono riuscito a stabilizzare la connessione su Call of Duty, Apex Legends, Valorant e Rocket League. Conviene, soprattutto per abbassare il ping."</div>
+          <p class="quote-author">— Tito3697, 123K iscritti (Italia · Call of Duty)</p>
         </div>
       </div>
     </div>
@@ -933,12 +1017,24 @@
     <div class="container">
       <h2>Domande frequenti</h2>
       <div class="faq-item">
+        <button class="faq-question">Cos'è GearUP?</button>
+        <div class="faq-answer"><p>GearUP è un game booster che riduce ping, packet loss e lag instradando i dati di gioco attraverso la rete ottimale. Non modifica il gameplay e non espone al rischio di ban.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Come riduce il ping GearUP?</button>
+        <div class="faq-answer"><p>GearUP ottimizza la connessione attraverso la tecnologia AIR (Adaptive Intelligent Routing), che seleziona il percorso di rete più stabile e veloce verso i server di gioco.</p></div>
+      </div>
+      <div class="faq-item">
         <button class="faq-question">GearUP è sicuro da usare?</button>
-        <div class="faq-answer"><p>Sì. Utilizza la tecnologia VPN esclusivamente per instradare i dati di gioco in modo criptato e sicuro. Non modifica il gameplay e non espone al rischio di ban.</p></div>
+        <div class="faq-answer"><p>Sì. Utilizza la tecnologia VPN esclusivamente per instradare i dati di gioco in modo criptato e sicuro. Non modifica i file di gioco e non espone al rischio di ban.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Su quali dispositivi funziona?</button>
-        <div class="faq-answer"><p>Funziona su PC Windows, Android, iOS, PlayStation, Xbox, Nintendo Switch, Oculus Quest e Pico. È disponibile anche una versione per router compatibili.</p></div>
+        <div class="faq-answer"><p>Funziona su PC Windows, Android, iOS, PlayStation, Xbox, Nintendo Switch, Oculus Quest e Pico. È disponibile anche una soluzione per router gaming compatibili, incluso HYPEREV.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Domande relative al router gaming HYPEREV</button>
+        <div class="faq-answer"><p>HYPEREV è il router gaming di GearUP. Si collega in pochi secondi e ottimizza la connessione per console e PC con un solo clic. Per acquisti e assistenza è disponibile l'area supporto HYPEREV sul sito ufficiale.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-question">Devo pagare subito?</button>
@@ -961,8 +1057,9 @@
 
   <footer>
     <div class="container">
-      <p>&copy; 2026 Landing partner GearUP. Pagina promozionale realizzata per Smile Internet Technologies PTE Limited tramite CJ Affiliate.</p>
-      <p>Sito ufficiale: <a href="https://www.gearupbooster.com/" target="_blank" rel="noopener">gearupbooster.com</a> &middot; Supporto: <a href="mailto:service1@gearupbooster.com">service1@gearupbooster.com</a></p>
+      <p>&copy; 2026 GearUP Portal Pte. Ltd. Tutti i diritti riservati. Pagina promozionale affiliata.</p>
+      <p>Prodotti: <a href="https://www.gearupbooster.com/" target="_blank" rel="noopener">GearUP Booster</a>, <a href="https://www.gearupbooster.com/hyperev/" target="_blank" rel="noopener">HYPEREV</a> &middot; <a href="https://www.gearupbooster.com/support/" target="_blank" rel="noopener">Supporto</a> &middot; <a href="https://www.gearupbooster.com/blog/" target="_blank" rel="noopener">Blog</a> &middot; <a href="mailto:service1@gearupbooster.com">service1@gearupbooster.com</a></p>
+      <p class="affiliate-note">Questa pagina contiene link affiliati. CJ Affiliate: fino al 70% su GearUP per Windows, 50% su Mobile, 10% cashback HYPEREV.</p>
     </div>
   </footer>
 
