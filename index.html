@@ -13,6 +13,38 @@
   <link rel="icon" type="image/png" href="assets/app-icon.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha384-nRgPTkuX86pH8yjPJUAFuASXQSSl2/bBUiNV47vSYpKFxHJhbcrGnmlYpYJMeD7a" crossorigin="anonymous">
   <title>GearUP Booster | Riduci Ping e Lag nei Tuoi Giochi</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "GearUP Booster",
+        "url": "https://gearup-khaki.vercel.app/",
+        "description": "GearUP Booster riduce ping, packet loss e lag per PC, mobile e console."
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "GearUP Booster",
+        "description": "Game booster che riduce ping, packet loss e lag stabilizzando la connessione di gioco.",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Windows, macOS, Android, iOS, PlayStation, Xbox, Nintendo Switch",
+        "image": "https://gearup-khaki.vercel.app/assets/og-image.jpg",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD",
+          "description": "Prova gratuita disponibile; abbonamenti a pagamento su gearupbooster.com"
+        },
+        "brand": {
+          "@type": "Brand",
+          "name": "GearUP"
+        },
+        "url": "https://www.gearupbooster.com/"
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg: #05070a;
@@ -138,11 +170,25 @@
       position: relative;
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0, 132, 255, 0.15);
-      border: 1px solid rgba(0, 210, 255, 0.10);
+      box-shadow: 0 30px 80px rgba(0, 132, 255, 0.25), 0 0 80px rgba(0, 210, 255, 0.15);
+      border: 1px solid rgba(0, 210, 255, 0.15);
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: -25%;
+      background: radial-gradient(circle at 25% 25%, rgba(0, 210, 255, 0.35), transparent 55%),
+                  radial-gradient(circle at 75% 75%, rgba(0, 255, 157, 0.25), transparent 55%);
+      filter: blur(60px);
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .hero-visual img {
+      position: relative;
+      z-index: 1;
       width: 100%;
       height: auto;
       display: block;
