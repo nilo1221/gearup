@@ -41,6 +41,67 @@
           "name": "GearUP"
         },
         "url": "https://www.gearupbooster.com/"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Cos'è GearUP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GearUP è un game booster che riduce ping, packet loss e lag instradando i dati di gioco attraverso la rete ottimale. Non modifica il gameplay e non espone al rischio di ban."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Come riduce il ping GearUP?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GearUP ottimizza la connessione attraverso la tecnologia AIR (Adaptive Intelligent Routing), che seleziona il percorso di rete più stabile e veloce verso i server di gioco."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "GearUP è sicuro da usare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sì. Utilizza la tecnologia VPN esclusivamente per instradare i dati di gioco in modo criptato e sicuro. Non modifica i file di gioco e non espone al rischio di ban."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Su quali dispositivi funziona?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Funziona su PC Windows, Android, iOS, PlayStation, Xbox, Nintendo Switch, Oculus Quest e Pico. È disponibile anche una soluzione per router gaming compatibili, incluso HYPEREV."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Domande relative al router gaming HYPEREV",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "HYPEREV è il router gaming di GearUP. Si collega in pochi secondi e ottimizza la connessione per console e PC con un solo clic. Per assistenza è disponibile l'area supporto HYPEREV sul sito ufficiale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Devo pagare subito?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Puoi iniziare con una prova gratuita. Gli abbonamenti si rinnovano automaticamente a fine ciclo, ma puoi cancellare quando vuoi."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quali giochi posso ottimizzare?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Oltre 2.500 titoli, tra cui Fortnite, Valorant, PUBG, Call of Duty, Free Fire, Mobile Legends, Brawl Stars, Roblox, Genshin Impact, NBA 2K, EA FC e molti altri."
+            }
+          }
+        ]
       }
     ]
   }
@@ -89,6 +150,13 @@
       -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0, 210, 255, 0.08);
+      transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(5, 7, 10, 0.92);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+      border-bottom-color: rgba(0, 210, 255, 0.18);
     }
 
     .nav-links {
@@ -129,6 +197,52 @@
     }
 
     .nav-cta:hover { text-decoration: none; opacity: 0.9; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 210, 255, 0.25);
+      background: var(--surface);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      color: var(--accent);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease, background 0.3s;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top:hover {
+      background: rgba(0, 210, 255, 0.15);
+      transform: translateY(-2px);
+    }
 
     .hero {
       padding: 3rem 0 2rem;
@@ -782,6 +896,7 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // FAQ accordion
       const faqs = document.querySelectorAll('.faq-question');
       faqs.forEach(q => {
         q.addEventListener('click', () => {
@@ -796,6 +911,57 @@
           }
         });
       });
+
+      // Sticky header scroll effect
+      const header = document.querySelector('header');
+      const updateHeader = () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      };
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
+
+      // Back-to-top button
+      const backToTop = document.createElement('button');
+      backToTop.className = 'back-to-top';
+      backToTop.setAttribute('aria-label', 'Torna su');
+      backToTop.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      document.body.appendChild(backToTop);
+
+      const updateBackToTop = () => {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      };
+      window.addEventListener('scroll', updateBackToTop, { passive: true });
+      updateBackToTop();
+
+      // Scroll reveal animations
+      const revealTargets = document.querySelectorAll('section, .card, .pricing-card, .faq-item, .tech-point, .partners, .hero-stats, .cta-centered, .cta-final');
+      revealTargets.forEach(el => el.classList.add('reveal'));
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealTargets.forEach(el => observer.observe(el));
+      } else {
+        revealTargets.forEach(el => el.classList.add('visible'));
+      }
     });
   </script>
 </head>
