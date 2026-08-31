@@ -602,8 +602,9 @@
       background: var(--surface);
     }
 
-    .banner-section a { display: inline-block; border-radius: 12px; overflow: hidden; }
-    .banner-section img { max-width: 100%; height: auto; display: block; }
+    .banner-section a { display: inline-block; border-radius: var(--radius); overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .banner-section a:hover { transform: translateY(-4px); box-shadow: 0 30px 70px rgba(0, 210, 255, 0.2); }
+    .banner-section a img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
 
     .affiliate-disclaimer {
       background: var(--surface);
@@ -1068,8 +1069,10 @@
   <section class="banner-section">
     <div class="container">
       <h2>Promo ufficiale GearUP</h2>
-      <p class="section-intro">Scopri l'offerta e attiva il tuo abbonamento oggi stesso.</p>
-      <a href="https://www.tkqlhce.com/click-101867902-17235976" class="btn" target="_blank" rel="noopener sponsored">Attiva l'offerta GearUP</a>
+      <p class="section-intro">Clicca sul banner per attivare l'offerta.</p>
+      <a href="https://www.tkqlhce.com/click-101867902-17235976" target="_blank" rel="noopener sponsored">
+        <img src="assets/promo-banner.jpg" alt="Promo GearUP - Riduci lag e ping" class="promo-banner" loading="lazy">
+      </a>
       <p class="affiliate-disclaimer">Questa pagina contiene link affiliati. Se effettui un acquisto attraverso questi link, ricevo una commissione senza alcun costo aggiuntivo per te.</p>
     </div>
   </section>
